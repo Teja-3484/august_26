@@ -1,0 +1,18 @@
+class Solution:
+    def isSameAfterReversals(self, num: int) -> bool:
+        temp = num
+        ans = 0
+        res = 0
+        
+        while temp > 0:
+            rem = temp % 10
+            ans = ans * 10 + rem
+            temp //= 10
+            
+        while ans > 0:
+            rem = ans % 10
+            res = res * 10 + rem
+            ans //= 10
+
+            
+        return num == res
